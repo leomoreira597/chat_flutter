@@ -124,10 +124,14 @@ class _ChatScreenState extends State<ChatScreen> {
                       return ListView.builder(
                           itemCount: documents.length,
                           reverse: true,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              title: Text(snapshot.data!.docs[index]['data']),
-                            );
+                          itemBuilder: (context, index){
+                            // return ListTile(
+                            // title: Text(snapshot.data!.docs[index]['text']),
+                            // );
+
+                            //return ChatMessage(snapshot.data!.docs[index]['text'],true);
+                            //return ChatMessage(documents[index].get('data'),true);
+                            return ChatMessage(documents[index].data, true)
                           }
                       );
                 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ChatMessage extends StatelessWidget {
   //const ({Key? key}) : super(key: key);
- ChatMessage(this.data, this.mine);
+  ChatMessage(this.data, this.mine);
 
   final Map<String, dynamic> data;
   final bool mine;

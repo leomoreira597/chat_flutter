@@ -8,6 +8,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'chat_message.dart';
+
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
@@ -20,6 +22,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final GoogleSignIn googleSignIn = GoogleSignIn();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   User? _currentUser;
+
 
     @override
   void initState() {
@@ -121,11 +124,9 @@ class _ChatScreenState extends State<ChatScreen> {
                       return ListView.builder(
                           itemCount: documents.length,
                           reverse: true,
-                          itemBuilder: (context, index){
+                          itemBuilder: (context, index) {
                             return ListTile(
-                              title: Text(
-                                documents[index].get('text'),
-                              ),
+                              title: Text(snapshot.data!.docs[index]['data']),
                             );
                           }
                       );

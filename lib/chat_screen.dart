@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-
 import 'chat_message.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -129,9 +128,10 @@ class _ChatScreenState extends State<ChatScreen> {
                             // title: Text(snapshot.data!.docs[index]['text']),
                             // );
 
-                            //return ChatMessage(snapshot.data!.docs[index]['text'],true);
+                            return ChatMessage(snapshot.data!.docs[index][data],true);
+                            //return ChatMessage(snapshot.data!.docs.map((e) => e.get(data)),true);
                             //return ChatMessage(documents[index].get('data'),true);
-                            return ChatMessage(documents[index].data, true)
+                            //return ChatMessage(documents[index].data, true);
                           }
                       );
                 }
